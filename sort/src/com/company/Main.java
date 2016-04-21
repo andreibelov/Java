@@ -61,7 +61,6 @@ public class Main {
             }
         }
         return var;
-        // *kissing seamary*
     }
 
     private static double round(double value, int places) {
