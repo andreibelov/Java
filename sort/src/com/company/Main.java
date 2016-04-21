@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	// My code is here
         int dim=10;
         while(dim>0) {
             dim = getDim();
@@ -61,7 +61,7 @@ public class Main {
             }
         }
         return var;
-
+        // *kissing seamary*
     }
 
     private static double round(double value, int places) {
