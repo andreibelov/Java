@@ -3,8 +3,6 @@ package sample;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
@@ -16,7 +14,6 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-//import javafx.scene.layout.StackPane;
 import java.util.Date;
 
 public class Main extends Application {
@@ -25,7 +22,6 @@ public class Main extends Application {
     private String cht;
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World!");
         cht = new java.util.Date().toString()+"\n    "+"HW!";
         setTxt();
@@ -45,7 +41,6 @@ public class Main extends Application {
         root.getChildren().add(crl);
         root.getChildren().add(btn);
         Scene sc1 = new Scene(root, 640, 480);
-        //Scene sc2 = new Scene(root, 640, 480);
         primaryStage.setScene(sc1);
         primaryStage.setMaxHeight(480);
         primaryStage.setMinHeight(480);
