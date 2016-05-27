@@ -39,6 +39,7 @@ class Sequence {
 
     private Sequence(double eps){
         this.eps = eps;
+        this.A = new ArrayList<Double>();
     }
     //Инстанциируемся со входным параметром
     static Sequence getNewInstance(double e){
@@ -52,7 +53,6 @@ class Sequence {
     private void filler(){
         double a = 1;
         int i=0;
-        this.A = new ArrayList<Double>();
         while (a > eps){
             a = 1.0/Math.pow((i+1.0), 2.0);
             this.A.add(a);
