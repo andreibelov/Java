@@ -27,9 +27,7 @@ public class Main {
             DecimalFormat df = new DecimalFormat("#.#####");
             System.out.println(df.format(d));
         }
-
     }
-
 }
 
 class Sequence {
@@ -59,8 +57,8 @@ class Sequence {
             i++;
         }
     }
-
-   ArrayList<Double> getA() {
+    //Метод возвращает ArrayList заполненный первыми n элементами последовательности.
+    ArrayList<Double> getA() {
         filler();
         return this.A;
     }
