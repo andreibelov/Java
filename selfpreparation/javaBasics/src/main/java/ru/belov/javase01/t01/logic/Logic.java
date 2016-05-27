@@ -1,4 +1,4 @@
-package javase01.t01.logic;
+package ru.belov.javase01.t01.logic;
 
 public class Logic {
     public String method(){
