@@ -2,6 +2,7 @@ package ru.belov.javase01.t02;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by john on 5/27/2016.
@@ -15,18 +16,51 @@ import java.util.ArrayList;
  */
 
 public class Main {
+
+    private static Double epsilon;
+
     public static void main(String[] args) {
 
-        Sequence sq = Sequence.getNewInstance(0.006);
+        epsilon = 0.0;
+        while (true){
+            epsilon = getEps();
+            if(!(epsilon<1 && epsilon>0)|| epsilon.isNaN()) {
+                System.out.println("Введено неверное значение, попробуйте еще раз");
+            } else {break;}
+        }
+        Sequence sq = Sequence.getNewInstance(epsilon);
 
         ArrayList<Double> A = sq.getA();
 
-        System.out.println("Наименьший номер элемента последовательности "+A.size()+"\n");
+        System.out.println("Наименьший номер элемента последовательности n="+A.size()+"\n");
         System.out.println("Список элементов последовательности с 1 по n:");
         for (double d:A) {
             DecimalFormat df = new DecimalFormat("#.#####");
             System.out.println(df.format(d));
         }
+    }
+
+    private static Double getEps() {
+        Double epsilon;
+        System.out.println("Введите значение Epsilon (от 0 до 1.0):");
+        Scanner in = new Scanner(System.in);
+        do
+        {
+            try {
+                String s = in.nextLine();
+                epsilon = Double.parseDouble(s);
+                break;
+            }
+            catch (Exception e)
+            {
+                System.out.println("Входные данные неверны. Попробуйте еще раз.");
+                System.out.println("Введите значение Epsilon (от 0 до 1.0): \n");
+            }
+        }
+        while (true);
+        System.out.print("Вы ввели:");
+        System.out.println(" "+epsilon+"\n");
+        return epsilon;
     }
 }
 
