@@ -67,12 +67,12 @@ class Sequence {
 
     private double eps;
     private ArrayList<Double> A;
-
     private Sequence(double eps){
         this.eps = eps;
         this.A = new ArrayList<Double>();
+        filler();
     }
-    //Инстанциируемся со входным параметром
+    //Инстанциируемся с одним входным параметром
     static Sequence getNewInstance(double e){
         return new Sequence(e);
     }
@@ -95,7 +95,6 @@ class Sequence {
     }
     //Метод возвращает ArrayList заполненный первыми n элементами последовательности.
     ArrayList<Double> getA() {
-        filler();
         return this.A;
     }
 }
