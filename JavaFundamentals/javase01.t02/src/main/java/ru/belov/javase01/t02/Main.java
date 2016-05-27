@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * a{n}=1.0/(n+1)^2
  *
- * M: a{n}<eps;
+ * M: a{n}>eps;
  */
 
 public class Main {
@@ -34,10 +34,13 @@ public class Main {
 
         System.out.println("Наименьший номер элемента последовательности n="+A.size()+"\n");
         System.out.println("Список элементов последовательности с 1 по n:");
+        int j=1;
         for (double d:A) {
             DecimalFormat df = new DecimalFormat("#.#####");
-            System.out.println(df.format(d));
+            System.out.println("a{"+Integer.toString(j)+"}="+df.format(d));
+            j++;
         }
+
     }
 
     private static Double getEps() {
@@ -84,8 +87,11 @@ class Sequence {
     //Заполняем динамический массив элементами, удовлетворяющими условию задачи.
     private void filler(){
         double a = 1;
-        int i=0;
-        while (a > eps){
+        //Так как для рассчета последовательности используется формула n-ного члена,
+        // то итерацию надо начинать с 1-го номера, а не с 0, так как не существует нулевого
+        // члена последовательности:
+        int i=1;
+        while (!(a < eps)){
             a = 1.0/Math.pow((i+1.0), 2.0);
             this.A.add(a);
             i++;
