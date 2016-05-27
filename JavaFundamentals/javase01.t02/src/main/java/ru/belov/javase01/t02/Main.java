@@ -8,20 +8,17 @@ import java.util.Scanner;
  * Created by john on 5/27/2016.
  * Класс позволяет найти наименьший номер элемента последовательности,
  * для которого выполняется условие M, а также
- * Вывести на экран этот номер и все элементы последовательности/
+ * вывести на экран этот номер и все элементы последовательности/
  *
  * a{n}=1.0/(n+1)^2
  *
- * M: a{n}>eps;
+ * M: a{n}<eps;
  */
 
 public class Main {
 
-    private static Double epsilon;
-
     public static void main(String[] args) {
-
-        epsilon = 0.0;
+        Double epsilon;
         while (true){
             epsilon = getEps();
             if(!(epsilon<1 && epsilon>0)|| epsilon.isNaN()) {
@@ -40,7 +37,6 @@ public class Main {
             System.out.println("a{"+Integer.toString(j)+"}="+df.format(d));
             j++;
         }
-
     }
 
     private static Double getEps() {
@@ -56,7 +52,7 @@ public class Main {
             }
             catch (Exception e)
             {
-                System.out.println("Входные данные неверны. Попробуйте еще раз.");
+                System.out.println("Введены некорректные данные. Попробуйте еще раз.");
                 System.out.println("Введите значение Epsilon (от 0 до 1.0): \n");
             }
         }
