@@ -18,6 +18,25 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
+        doStuff();
+        do
+        {
+            Scanner in = new Scanner(System.in);
+            try {
+                System.out.println("Продолжить работу с программой? (y/n)[y]");
+                String s = in.nextLine();
+                if (s.equals("n")) break;
+            } catch (Exception e) {
+                System.out.println("Введены некорректные данные. Попробуйте еще раз.");
+            }
+            doStuff();
+        }
+        while (true);
+
+    }
+
+    private static void doStuff() {
         Double epsilon;
         while (true){
             epsilon = getEps();
@@ -93,7 +112,7 @@ class Sequence {
             i++;
         }
     }
-    //Метод возвращает ArrayList заполненный первыми n элементами последовательности.
+    /*Метод возвращает ArrayList заполненный первыми n элементами последовательности.*/
     ArrayList<Double> getA() {
         return this.A;
     }
