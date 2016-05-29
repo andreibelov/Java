@@ -11,3 +11,5 @@ set MAIN_CLASS=ru.belov.javase01.t03.Main
 :gotMainClass
 java -Dfile.encoding=UTF8 -cp %COMPILE_TARGET% %MAIN_CLASS%
 ENDLOCAL
+
+pause
