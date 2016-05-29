@@ -33,7 +33,7 @@ public class Main {
             }
         }
         while (true);
-        doStuff2(m);
+        doStuff(m);
     }
     private static Boolean doStuff2(double[] d) {
         int i; double x,y;
@@ -67,7 +67,7 @@ public class Main {
             x = f.getGrafic().X[i];
             y = f.getGrafic().Y[i];
             content +=    "\t╟────╫────────────────────╫────────────────────╢\n";
-            content +=    "\t║ "+dfi.format((i+1))+" ║  x= "+df.format(x).replaceAll("E([^\\-]+)", "E+$1")+"  ║ "+"F(x)= "+df.format(y).replaceAll("E([^\\-]+)", "E+$1")+" ║\n";
+            content +=    "\t║ "+dfi.format((i+1))+" ║  x= "+df.format(x).replaceAll("E([^\\-]+)", "E+$1")+"   ║ "+"F(x)= "+df.format(y).replaceAll("E([^\\-]+)", "E+$1")+" ║\n";
         }
         String footer =   "\t╚════╩════════════════════╩════════════════════╝";
         System.out.println(header+content+footer);
@@ -100,6 +100,7 @@ class Function{
     private Function(double _a, double _b, double _h){
         double x=0,y;
         a = _a; b = _b; h = _h;
+
         grafic = new Grafic(a,b,h);
         int l = grafic.Ind.length;
         for (int i = 0; i < l; i++) {
@@ -128,7 +129,7 @@ class Grafic {
     int[] Ind;
 
     Grafic(double a, double b, double h){
-        int l = (int)((b-a)/h)+1;
+        int l = (int) ((b-a)/h)+1;
         double remain = ((b-a)%h);
         if (remain!=0.0){l++;}
         X = new double[l];
