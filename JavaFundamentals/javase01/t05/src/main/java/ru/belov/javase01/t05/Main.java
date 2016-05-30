@@ -4,7 +4,7 @@ import java.util.Arrays;
 /**
  * Created by user on 5/30/2016.
  * Внимание! Для запуска программы воспользуйтесь CMD файлом run.cmd
- * В среде IDE (IDEA в данно случае), метод System.console().readLine() не работает!!!
+ * В среде IDE (IDEA в данном случае), метод System.console().readLine() не работает!!!
  */
 
 public class Main {
