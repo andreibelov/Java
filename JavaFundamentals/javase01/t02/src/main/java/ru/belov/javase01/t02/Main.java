@@ -40,15 +40,15 @@ public class Main {
         Double epsilon;
         while (true){
             epsilon = getEps();
-            if(!(epsilon<1 && epsilon>0)|| epsilon.isNaN()) {
+            if( epsilon<0 || epsilon.isNaN()) {
                 System.out.println("Введено неверное значение, попробуйте еще раз");
             } else {break;}
         }
         Sequence sq = Sequence.getNewInstance(epsilon);
 
         ArrayList<Double> A = sq.getA();
-
-        System.out.println("Наименьший номер элемента последовательности n="+A.size()+"\n");
+        if (A.size()==1){System.out.println("Для любого n из {a(n)} условие M верно");}
+        System.out.println("Наименьший номер элемента последовательности, удовлетворяющий условию М - n="+A.size()+"\n");
         System.out.println("Список элементов последовательности с 1 по n:");
         int j=1;
         for (double d:A) {
@@ -60,11 +60,11 @@ public class Main {
 
     private static Double getEps() {
         Double epsilon;
-        System.out.println("Введите значение Epsilon (от 0 до 1.0):");
         Scanner in = new Scanner(System.in);
         do
         {
             try {
+                System.out.println("Введите значение Epsilon > 0:");
                 String s = in.nextLine();
                 epsilon = Double.parseDouble(s);
                 break;
@@ -72,7 +72,6 @@ public class Main {
             catch (Exception e)
             {
                 System.out.println("Введены некорректные данные. Попробуйте еще раз.");
-                System.out.println("Введите значение Epsilon (от 0 до 1.0): \n");
             }
         }
         while (true);
@@ -97,20 +96,21 @@ class Sequence {
     }
     //Инстанциируемся без параметров
     static Sequence getNewInstance(){
-        return new Sequence(0.1);
+        return new Sequence(0.24);
     }
     //Заполняем динамический массив элементами, удовлетворяющими условию задачи.
     private void filler(){
-        double a = 1;
+        double a; int i=1;
+
         //Так как для рассчета последовательности используется формула n-ного члена,
         // то итерацию надо начинать с 1-го номера, а не с 0, так как не существует нулевого
         // члена последовательности:
-        int i=1;
-        while (!(a < eps)){
+
+        do {
             a = 1.0/Math.pow((i+1.0), 2.0);
-            this.A.add(a);
-            i++;
+            this.A.add(a); i++;
         }
+        while (a>eps);
     }
     /*Метод возвращает ArrayList заполненный первыми n элементами последовательности.*/
     ArrayList<Double> getA() {
