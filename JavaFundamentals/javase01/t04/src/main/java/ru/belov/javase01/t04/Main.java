@@ -27,7 +27,7 @@ public class Main {
 }
 class Sequence {
     Set<Double> generated_set;
-    List<Double> sub_set;
+    private List<Double> sub_set;
     private Sequence(int n,double rangeMin,double rangeMax){
         Random rnd = new Random();
         this.generated_set = new LinkedHashSet<Double>();
@@ -43,11 +43,10 @@ class Sequence {
         System.out.print("Введите размер последовательности: n=");
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
         try {
-            String in = console.readLine();
-            n = Integer.parseInt(in);
+            n = Integer.parseInt(console.readLine());
 
         }catch (IOException ex) {
-            System.out.println("Smth is wrong!");
+            System.out.println("Smth went wrong!");
         }
         return new Sequence(n,-50,50);
     }
@@ -56,6 +55,8 @@ class Sequence {
         getSorted();
         return this.sub_set.get(this.sub_set.size()-1);
     }
+
+    //private void createSubSet(){this.sub_set = new ArrayList<>();}
 
     private void getSorted(){
         this.sub_set = new ArrayList<>(this.generated_set);
