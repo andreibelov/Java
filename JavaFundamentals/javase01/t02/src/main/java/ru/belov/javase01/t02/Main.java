@@ -88,18 +88,6 @@ class Sequence {
     private Sequence(double eps){
         this.eps = eps;
         this.A = new ArrayList<Double>();
-        filler();
-    }
-    //Инстанциируемся с одним входным параметром
-    static Sequence getNewInstance(double e){
-        return new Sequence(e);
-    }
-    //Инстанциируемся без параметров
-    static Sequence getNewInstance(){
-        return new Sequence(0.24);
-    }
-    //Заполняем динамический массив элементами, удовлетворяющими условию задачи.
-    private void filler(){
         double a; int i=1;
 
         //Так как для рассчета последовательности используется формула n-ного члена,
@@ -112,7 +100,17 @@ class Sequence {
         }
         while (a>eps);
     }
-    /*Метод возвращает ArrayList заполненный первыми n элементами последовательности.*/
+    //Инстанциируемся с одним входным параметром
+    static Sequence getNewInstance(double e){
+        return new Sequence(e);
+    }
+    //Инстанциируемся без параметров
+    static Sequence getNewInstance(){
+        return new Sequence(0.24);
+    }
+    //Заполняем динамический массив элементами, удовлетворяющими условию задачи.
+
+    /*Метод getA() возвращает ArrayList заполненный первыми n элементами последовательности.*/
     ArrayList<Double> getA() {
         return this.A;
     }
