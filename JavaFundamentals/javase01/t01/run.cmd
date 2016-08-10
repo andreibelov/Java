@@ -9,5 +9,5 @@ if not "%MAIN_CLASS%" == "" goto gotMainClass
 set MAIN_CLASS=ru.belov.javase01.t01.main.Main
 
 :gotMainClass
-java -Dfile.encoding=UTF8 -cp %COMPILE_TARGET% %MAIN_CLASS%
+java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -Dfile.encoding=UTF8 -cp %COMPILE_TARGET% %MAIN_CLASS% | clip
 ENDLOCAL
