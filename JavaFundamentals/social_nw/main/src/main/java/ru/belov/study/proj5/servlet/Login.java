@@ -22,7 +22,7 @@ import java.util.concurrent.ConcurrentLinkedDeque;
  * @author andrei.belov aka john
  * @link http://vk.com/andrei.belov
  */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login.do"})
 public class Login extends javax.servlet.http.HttpServlet {
     private UserDao userDao;
     private ChatQueue msgQueue;

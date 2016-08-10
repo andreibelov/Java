@@ -39,7 +39,7 @@ public class UserDaoJdbc implements UserDao, JdbcDao {
     public Optional<User> find(String login, String password) throws DaoException {
         String sql =
                 "SELECT username, password " +
-                        "FROM FROM public.users t WHERE username = ? and password = ?";
+                        "FROM public.users t WHERE username = ? and password = ?";
         return mapPreparedStatement(sql, preparedStatement -> {
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, password);

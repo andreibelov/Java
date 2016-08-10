@@ -65,7 +65,7 @@
 <div class="container-fluid">
     <div class="container">
 
-        <form class="form-signin" method="POST" action="${pageContext.request.contextPath}/login">
+        <form class="form-signin" method="POST" action="${pageContext.request.contextPath}/login.do">
             <h2 class="form-signin-heading">Please sign in</h2>
             <label for="inputEmail" class="sr-only">Email address</label>
             <input type="email" name="j_username" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>

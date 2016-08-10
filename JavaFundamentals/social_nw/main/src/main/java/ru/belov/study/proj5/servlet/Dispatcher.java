@@ -14,7 +14,7 @@ import java.io.IOException;
  * Created by john on 7/7/2016.
  * My own dispatcher
  */
-@WebServlet(name = "Dispatcher", urlPatterns = {"/*"})
+@WebServlet(name = "Dispatcher", urlPatterns = {"/jsp/*"})
 public class Dispatcher extends javax.servlet.http.HttpServlet {
 
     private void doDispatch(HttpServletRequest request, HttpServletResponse response)
